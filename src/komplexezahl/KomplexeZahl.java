@@ -1,12 +1,12 @@
 package komplexezahl;
 
 /**
- * @name : KomplexeZahl
+ * name : KomplexeZahl
  *
  * @author: konstantin
- * @date : 22.11.2014
+ * date : 22.11.2014
  *
- * @brief : Klasse zur Darstellung einer komplexen Zahl
+ * brief : Klasse zur Darstellung einer komplexen Zahl
  *
  */
 public class KomplexeZahl
@@ -70,7 +70,7 @@ public class KomplexeZahl
      * @param real RealTeil
      * @param imag ImaginaerTeil
      *
-     * @return
+     * @return complex number
      */
     public KomplexeZahl addKomplex(double real, double imag)
     {
@@ -84,10 +84,10 @@ public class KomplexeZahl
     /**
      * subtrahiert eine komplexe Zahl von der akktuellen
      *
-     * @param real
-     * @param imag
+     * @param real RealTeil
+     * @param imag ImagTeil
      *
-     * @return
+     * @return KomplexeZahl
      */
     public KomplexeZahl subKomplex(double real, double imag)
     {
@@ -100,10 +100,10 @@ public class KomplexeZahl
 
     /**
      *
-     * @param a 
-     * @param b
-     *
-     * @return
+     * @param a complex number
+     * @param b complex number
+     * 
+     * @return KomplexeZahl
      */
     public KomplexeZahl multi(KomplexeZahl a, KomplexeZahl b)
     {
@@ -116,10 +116,10 @@ public class KomplexeZahl
 
     /**
      *
-     * @param a
-     * @param b
+     * @param a complex number
+     * @param b complex number
      *
-     * @return
+     * @return KomplexeZahl
      */
     public KomplexeZahl div(KomplexeZahl a, KomplexeZahl b)
     {
@@ -160,7 +160,7 @@ public class KomplexeZahl
     
     /**
      * 
-     * @return complex number as String -> (re + im * j)
+     * @return complex number as String (re + im * j)
      */
     public String print()
     {
