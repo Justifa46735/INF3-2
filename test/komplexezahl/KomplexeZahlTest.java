@@ -76,14 +76,13 @@ public class KomplexeZahlTest
     public void testAddKomplex()
     {
         System.out.println("addKomplex");
-        double real = 0.0;
-        double imag = 0.0;
-        KomplexeZahl instance = new KomplexeZahl();
-        KomplexeZahl expResult = null;
+        double real = 10.0;
+        double imag = 10.0;
+        KomplexeZahl instance = new KomplexeZahl(5, 5);
+        KomplexeZahl expResult = new KomplexeZahl(15, 15);
         KomplexeZahl result = instance.addKomplex(real, imag);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
     }
 
     /**
@@ -93,14 +92,14 @@ public class KomplexeZahlTest
     public void testSubKomplex()
     {
         System.out.println("subKomplex");
-        double real = 0.0;
-        double imag = 0.0;
-        KomplexeZahl instance = new KomplexeZahl();
-        KomplexeZahl expResult = null;
+        double real = 5.0;
+        double imag = 5.0;
+        KomplexeZahl instance = new KomplexeZahl(10, 10);
+        KomplexeZahl expResult = new KomplexeZahl(5, 5);
         KomplexeZahl result = instance.subKomplex(real, imag);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
+
     }
 
     /**
@@ -144,11 +143,11 @@ public class KomplexeZahlTest
     public void testSetReal()
     {
         System.out.println("setReal");
-        double re = 0.0;
+        double re = 10;
         KomplexeZahl instance = new KomplexeZahl();
         instance.setReal(re);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = instance.getReal();
+        assertEquals(re, result, 0.0);
     }
 
     /**
@@ -158,11 +157,12 @@ public class KomplexeZahlTest
     public void testSetImag()
     {
         System.out.println("setImag");
-        double im = 0.0;
+        double im = 10;
         KomplexeZahl instance = new KomplexeZahl();
         instance.setImag(im);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double result = instance.getImag();
+        assertEquals(im, result, 0.0);
+
     }
 
     /**
@@ -172,12 +172,10 @@ public class KomplexeZahlTest
     public void testAbs()
     {
         System.out.println("abs");
-        KomplexeZahl instance = new KomplexeZahl();
-        double expResult = 0.0;
+        KomplexeZahl instance = new KomplexeZahl(10, 10);
+        double expResult = 10;
         double result = instance.abs();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -187,7 +185,7 @@ public class KomplexeZahlTest
     public void testPrint()
     {
         System.out.println("print");
-        KomplexeZahl instance = new KomplexeZahl(10,20);
+        KomplexeZahl instance = new KomplexeZahl(10, 20);
         String expResult = "(10 + j * 20)";
         String result = instance.print();
         if (expResult.compareTo(result) != 0)
