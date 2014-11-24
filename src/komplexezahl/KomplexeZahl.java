@@ -69,12 +69,27 @@ public class KomplexeZahl
     public KomplexeZahl div(KomplexeZahl a, KomplexeZahl b)
     {
       double real;
-      double im;
       real = (a.getReal()*b.getReal() + a.getImag()*b.getImag())/
              (java.lang.Math.pow(b.getReal(), 2) + java.lang.Math.pow(b.getImag(), 2));
       im = (a.getImag()*b.getReal() - a.getReal()*b.getImag())/
            (java.lang.Math.pow(b.getReal(), 2) + java.lang.Math.pow(b.getImag(), 2));
       return new KomplexeZahl(real,im);     
     }
+
+  /**
+   * @param re the re to set
+   */
+  public void setRe(double re)
+  {
+    this.re = re;
+  }
+
+  /**
+   * @param im the im to set
+   */
+  public void setIm(double im)
+  {
+    this.im = im;
+  }
     
 }
