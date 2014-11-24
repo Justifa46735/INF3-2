@@ -99,10 +99,11 @@ public class KomplexeZahl
     }
 
     /**
-     * 
+     *
      * @param a
      * @param b
-     * @return 
+     *
+     * @return
      */
     public KomplexeZahl multi(KomplexeZahl a, KomplexeZahl b)
     {
@@ -114,10 +115,11 @@ public class KomplexeZahl
     }
 
     /**
-     * 
+     *
      * @param a
      * @param b
-     * @return 
+     *
+     * @return
      */
     public KomplexeZahl div(KomplexeZahl a, KomplexeZahl b)
     {
@@ -132,7 +134,7 @@ public class KomplexeZahl
     /**
      * @param re the re to set
      */
-    public void setRe(double re)
+    public void setReal(double re)
     {
         this.re = re;
     }
@@ -140,8 +142,35 @@ public class KomplexeZahl
     /**
      * @param im the im to set
      */
-    public void setIm(double im)
+    public void setImag(double im)
     {
         this.im = im;
+    }
+
+    /**
+     * 
+     * @return abs of the complex number
+     */
+    public double abs()
+    {
+        double abs = Math.sqrt(Math.pow(getReal(), 2) + Math.pow(getImag(), 2));
+
+        return abs;
+    }
+    
+    /**
+     * 
+     * @return complex number as String -> (re + im * j)
+     */
+    public String print()
+    {
+        StringBuilder msg = new StringBuilder();
+        
+        msg.append("(");
+        msg.append(getReal());
+        msg.append(getImag());
+        msg.append(" * j)");
+        
+        return msg.toString();
     }
 }
