@@ -65,7 +65,7 @@ public class KomplexeZahl
       im = a.getReal() * b.getImag() + a.getImag() * b.getReal();
       return new KomplexeZahl(real,im);
     }
-    
+    //Kommentar
     public KomplexeZahl div(KomplexeZahl a, KomplexeZahl b)
     {
       double real;
