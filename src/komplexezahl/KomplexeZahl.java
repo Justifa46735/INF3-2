@@ -107,10 +107,10 @@ public class KomplexeZahl
     public KomplexeZahl multi(KomplexeZahl a, KomplexeZahl b)
     {
         double real;
-        double im;
+        double imag;
         real = a.getReal() * b.getReal() - a.getImag() * b.getImag();
-        im = a.getReal() * b.getImag() + a.getImag() * b.getReal();
-        return new KomplexeZahl(real, im);
+        imag = a.getReal() * b.getImag() + a.getImag() * b.getReal();
+        return new KomplexeZahl(real, imag);
     }
 
     /**
@@ -138,7 +138,7 @@ public class KomplexeZahl
     }
 
     /**
-     * @param im the im to set
+     * @param im the imag to set
      */
     public void setIm(double im)
     {
