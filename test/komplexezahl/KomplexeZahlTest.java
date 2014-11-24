@@ -50,12 +50,10 @@ public class KomplexeZahlTest
     public void testGetReal()
     {
         System.out.println("getReal");
-        KomplexeZahl instance = new KomplexeZahl();
-        double expResult = 0.0;
+        KomplexeZahl instance = new KomplexeZahl(10,20);
+        double expResult = 10;
         double result = instance.getReal();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -65,12 +63,10 @@ public class KomplexeZahlTest
     public void testGetImag()
     {
         System.out.println("getImag");
-        KomplexeZahl instance = new KomplexeZahl();
-        double expResult = 0.0;
+        KomplexeZahl instance = new KomplexeZahl(10,20);
+        double expResult = 20;
         double result = instance.getImag();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**

@@ -6,7 +6,7 @@ package komplexezahl;
  * @author: konstantin
  * @date : 22.11.2014
  *
- * @brief : Klasse durch Darstellung einer komplexen Zahl
+ * @brief : Klasse zur Darstellung einer komplexen Zahl
  *
  */
 public class KomplexeZahl
@@ -15,7 +15,7 @@ public class KomplexeZahl
     private double im;
 
     /**
-     *
+     * default constructor: init re and im with 0
      */
     public KomplexeZahl()
     {
