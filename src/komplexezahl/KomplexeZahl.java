@@ -24,7 +24,7 @@ public class KomplexeZahl
     }
 
     /**
-     *
+     * 
      * @param re RealTeil
      * @param im ImaginaerTeil
      */
@@ -67,8 +67,8 @@ public class KomplexeZahl
 
     /**
      *
-     * @param real
-     * @param imag
+     * @param real RealTeil
+     * @param imag ImaginaerTeil
      *
      * @return
      */
@@ -100,7 +100,7 @@ public class KomplexeZahl
 
     /**
      *
-     * @param a
+     * @param a 
      * @param b
      *
      * @return
@@ -168,8 +168,15 @@ public class KomplexeZahl
         
         msg.append("(");
         msg.append(getReal());
+        if(getImag() >= 0)
+        {
+            msg.append(" + j * ");
+        }
+        else
+        {
+            msg.append(" - j * ");
+        }
         msg.append(getImag());
-        msg.append(" * j)");
         
         return msg.toString();
     }

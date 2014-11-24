@@ -18,26 +18,26 @@ import static org.junit.Assert.*;
  */
 public class KomplexeZahlTest
 {
-    
+
     public KomplexeZahlTest()
     {
     }
-    
+
     @BeforeClass
     public static void setUpClass()
     {
     }
-    
+
     @AfterClass
     public static void tearDownClass()
     {
     }
-    
+
     @Before
     public void setUp()
     {
     }
-    
+
     @After
     public void tearDown()
     {
@@ -50,7 +50,7 @@ public class KomplexeZahlTest
     public void testGetReal()
     {
         System.out.println("getReal");
-        KomplexeZahl instance = new KomplexeZahl(10,20);
+        KomplexeZahl instance = new KomplexeZahl(10, 20);
         double expResult = 10;
         double result = instance.getReal();
         assertEquals(expResult, result, 0.0);
@@ -63,7 +63,7 @@ public class KomplexeZahlTest
     public void testGetImag()
     {
         System.out.println("getImag");
-        KomplexeZahl instance = new KomplexeZahl(10,20);
+        KomplexeZahl instance = new KomplexeZahl(10, 20);
         double expResult = 20;
         double result = instance.getImag();
         assertEquals(expResult, result, 0.0);
@@ -187,12 +187,13 @@ public class KomplexeZahlTest
     public void testPrint()
     {
         System.out.println("print");
-        KomplexeZahl instance = new KomplexeZahl();
-        String expResult = "";
+        KomplexeZahl instance = new KomplexeZahl(10,20);
+        String expResult = "(10 + j * 20)";
         String result = instance.print();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        if (expResult.compareTo(result) != 0)
+        {
+            fail("failed to print complex zahl");
+        }
     }
-    
+
 }
