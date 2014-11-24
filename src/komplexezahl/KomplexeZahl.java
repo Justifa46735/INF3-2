@@ -47,7 +47,7 @@ public class KomplexeZahl
     {
         return re;
     }
-
+       
     /**
      * 
      * @return ImaginaerTeil dieser komplexen Zahl
@@ -56,4 +56,25 @@ public class KomplexeZahl
     {
         return im;
     }
+    
+    public KomplexeZahl multi(KomplexeZahl a, KomplexeZahl b)
+    {
+      double real;
+      double im;
+      real = a.getReal() * b.getReal() - a.getImag() * b.getImag();
+      im = a.getReal() * b.getImag() + a.getImag() * b.getReal();
+      return new KomplexeZahl(real,im);
+    }
+    
+    public KomplexeZahl div(KomplexeZahl a, KomplexeZahl b)
+    {
+      double real;
+      double im;
+      real = (a.getReal()*b.getReal() + a.getImag()*b.getImag())/
+             (java.lang.Math.pow(b.getReal(), 2) + java.lang.Math.pow(b.getImag(), 2));
+      im = (a.getImag()*b.getReal() - a.getReal()*b.getImag())/
+           (java.lang.Math.pow(b.getReal(), 2) + java.lang.Math.pow(b.getImag(), 2));
+      return new KomplexeZahl(real,im);     
+    }
+    
 }
