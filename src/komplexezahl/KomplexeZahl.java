@@ -1,4 +1,3 @@
-
 package komplexezahl;
 
 /**
@@ -15,8 +14,6 @@ public class KomplexeZahl
     private double re;
     private double im;
 
-    
-    
     /**
      *
      */
@@ -25,7 +22,7 @@ public class KomplexeZahl
         this.re = 0;
         this.im = 0;
     }
-    
+
     /**
      *
      * @param re RealTeil
@@ -38,7 +35,7 @@ public class KomplexeZahl
     }
 
     /**
-     * 
+     *
      * @param c komplexe Zahl
      */
     public KomplexeZahl(KomplexeZahl c)
@@ -51,87 +48,100 @@ public class KomplexeZahl
     }
 
     /**
-     * 
+     *
      * @return RealTeil dieser komplexen Zahl
      */
     public double getReal()
     {
         return re;
     }
-       
+
     /**
-     * 
+     *
      * @return ImaginaerTeil dieser komplexen Zahl
      */
     public double getImag()
     {
         return im;
     }
-    
+
     /**
-     * 
+     *
      * @param real
      * @param imag
-     * @return 
-    */
+     *
+     * @return
+     */
     public KomplexeZahl addKomplex(double real, double imag)
     {
         KomplexeZahl c = new KomplexeZahl();
         c.im = this.im + imag;
         c.re = this.re + real;
-        
+
         return c;
     }
-    
+
     /**
      * subtrahiert eine komplexe Zahl von der akktuellen
-     * 
+     *
      * @param real
      * @param imag
-     * @return 
+     *
+     * @return
      */
     public KomplexeZahl subKomplex(double real, double imag)
     {
         KomplexeZahl c = new KomplexeZahl();
         c.im = this.im - imag;
         c.re = this.re - real;
-        
+
         return c;
     }
-    
+
+    /**
+     * 
+     * @param a
+     * @param b
+     * @return 
+     */
     public KomplexeZahl multi(KomplexeZahl a, KomplexeZahl b)
     {
-      double real;
-      double im;
-      real = a.getReal() * b.getReal() - a.getImag() * b.getImag();
-      im = a.getReal() * b.getImag() + a.getImag() * b.getReal();
-      return new KomplexeZahl(real,im);
+        double real;
+        double im;
+        real = a.getReal() * b.getReal() - a.getImag() * b.getImag();
+        im = a.getReal() * b.getImag() + a.getImag() * b.getReal();
+        return new KomplexeZahl(real, im);
     }
-    //Kommentar
+
+    /**
+     * 
+     * @param a
+     * @param b
+     * @return 
+     */
     public KomplexeZahl div(KomplexeZahl a, KomplexeZahl b)
     {
-      double real;
-      real = (a.getReal()*b.getReal() + a.getImag()*b.getImag())/
-             (java.lang.Math.pow(b.getReal(), 2) + java.lang.Math.pow(b.getImag(), 2));
-      im = (a.getImag()*b.getReal() - a.getReal()*b.getImag())/
-           (java.lang.Math.pow(b.getReal(), 2) + java.lang.Math.pow(b.getImag(), 2));
-      return new KomplexeZahl(real,im);     
+        double real;
+        real = (a.getReal() * b.getReal() + a.getImag() * b.getImag())
+                / (java.lang.Math.pow(b.getReal(), 2) + java.lang.Math.pow(b.getImag(), 2));
+        im = (a.getImag() * b.getReal() - a.getReal() * b.getImag())
+                / (java.lang.Math.pow(b.getReal(), 2) + java.lang.Math.pow(b.getImag(), 2));
+        return new KomplexeZahl(real, im);
     }
 
-  /**
-   * @param re the re to set
-   */
-  public void setRe(double re)
-  {
-    this.re = re;
-  }
+    /**
+     * @param re the re to set
+     */
+    public void setRe(double re)
+    {
+        this.re = re;
+    }
 
-  /**
-   * @param im the im to set
-   */
-  public void setIm(double im)
-  {
-    this.im = im;
-  }
-    
+    /**
+     * @param im the im to set
+     */
+    public void setIm(double im)
+    {
+        this.im = im;
+    }
 }
