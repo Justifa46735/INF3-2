@@ -15,6 +15,17 @@ public class KomplexeZahl
     private double re;
     private double im;
 
+    
+    
+    /**
+     *
+     */
+    public KomplexeZahl()
+    {
+        this.re = 0;
+        this.im = 0;
+    }
+    
     /**
      *
      * @param re RealTeil
@@ -55,6 +66,37 @@ public class KomplexeZahl
     public double getImag()
     {
         return im;
+    }
+    
+    /**
+     * 
+     * @param real
+     * @param imag
+     * @return 
+    */
+    public KomplexeZahl addKomplex(double real, double imag)
+    {
+        KomplexeZahl c = new KomplexeZahl();
+        c.im = this.im + imag;
+        c.re = this.re + real;
+        
+        return c;
+    }
+    
+    /**
+     * subtrahiert eine komplexe Zahl von der akktuellen
+     * 
+     * @param real
+     * @param imag
+     * @return 
+     */
+    public KomplexeZahl subKomplex(double real, double imag)
+    {
+        KomplexeZahl c = new KomplexeZahl();
+        c.im = this.im - imag;
+        c.re = this.re - real;
+        
+        return c;
     }
     
     public KomplexeZahl multi(KomplexeZahl a, KomplexeZahl b)
