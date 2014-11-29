@@ -18,26 +18,26 @@ import static org.junit.Assert.*;
  */
 public class KomplexeZahlTest
 {
-
+    
     public KomplexeZahlTest()
     {
     }
-
+    
     @BeforeClass
     public static void setUpClass()
     {
     }
-
+    
     @AfterClass
     public static void tearDownClass()
     {
     }
-
+    
     @Before
     public void setUp()
     {
     }
-
+    
     @After
     public void tearDown()
     {
@@ -70,73 +70,6 @@ public class KomplexeZahlTest
     }
 
     /**
-     * Test of addKomplex method, of class KomplexeZahl.
-     */
-    @Test
-    public void testAddKomplex()
-    {
-        System.out.println("addKomplex");
-        double real = 10.0;
-        double imag = 10.0;
-        KomplexeZahl instance = new KomplexeZahl(5, 5);
-        KomplexeZahl expResult = new KomplexeZahl(15, 15);
-        KomplexeZahl result = instance.addKomplex(real, imag);
-        assertEquals(expResult.getReal(), result.getReal(), 0.0);
-        assertEquals(expResult.getImag(), result.getImag(), 0.0);
-    }
-
-    /**
-     * Test of subKomplex method, of class KomplexeZahl.
-     */
-    @Test
-    public void testSubKomplex()
-    {
-        System.out.println("subKomplex");
-        double real = 5.0;
-        double imag = 5.0;
-        KomplexeZahl instance = new KomplexeZahl(10, 10);
-        KomplexeZahl expResult = new KomplexeZahl(5, 5);
-        KomplexeZahl result = instance.subKomplex(real, imag);
-        assertEquals(expResult.getReal(), result.getReal(), 0.0);
-        assertEquals(expResult.getImag(), result.getImag(), 0.0);
-
-    }
-
-    /**
-     * Test of multi method, of class KomplexeZahl.
-     */
-    @Test
-    public void testMulti()
-    {
-        System.out.println("multi");
-        KomplexeZahl a = null;
-        KomplexeZahl b = null;
-        KomplexeZahl instance = new KomplexeZahl();
-        KomplexeZahl expResult = null;
-        KomplexeZahl result = instance.multi(a, b);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of div method, of class KomplexeZahl.
-     */
-    @Test
-    public void testDiv()
-    {
-        System.out.println("div");
-        KomplexeZahl a = null;
-        KomplexeZahl b = null;
-        KomplexeZahl instance = new KomplexeZahl();
-        KomplexeZahl expResult = null;
-        KomplexeZahl result = instance.div(a, b);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of setReal method, of class KomplexeZahl.
      */
     @Test
@@ -162,7 +95,7 @@ public class KomplexeZahlTest
         instance.setImag(im);
         double result = instance.getImag();
         assertEquals(im, result, 0.0);
-
+        
     }
 
     /**
@@ -172,8 +105,8 @@ public class KomplexeZahlTest
     public void testAbs()
     {
         System.out.println("abs");
-        KomplexeZahl instance = new KomplexeZahl(10, 10);
-        double expResult = 10;
+        KomplexeZahl instance = new KomplexeZahl(1, 1);
+        double expResult = Math.sqrt(2);
         double result = instance.abs();
         assertEquals(expResult, result, 0.0);
     }
@@ -185,8 +118,8 @@ public class KomplexeZahlTest
     public void testPrint()
     {
         System.out.println("print");
-        KomplexeZahl instance = new KomplexeZahl(10, 20);
-        String expResult = "(10 + j * 20)";
+        KomplexeZahl instance = new KomplexeZahl(10, -20);
+        String expResult = "(10.0 - j * 20.0)";
         String result = instance.print();
         if (expResult.compareTo(result) != 0)
         {
@@ -194,4 +127,128 @@ public class KomplexeZahlTest
         }
     }
 
+    /**
+     * Test of add method, of class KomplexeZahl.
+     */
+    @Test
+    public void testAdd_KomplexeZahl()
+    {
+        System.out.println("add");
+        KomplexeZahl c = new KomplexeZahl(5, 10);
+        KomplexeZahl instance = new KomplexeZahl(10, 5);
+        KomplexeZahl expResult = new KomplexeZahl(15, 15);
+        KomplexeZahl result = instance.add(c);
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
+    }
+
+    /**
+     * Test of add method, of class KomplexeZahl.
+     */
+    @Test
+    public void testAdd_double_double()
+    {
+        System.out.println("add");
+        double real = 5.0;
+        double imag = 10.0;
+        KomplexeZahl instance = new KomplexeZahl(10, 5);
+        KomplexeZahl expResult = new KomplexeZahl(15, 15);
+        KomplexeZahl result = instance.add(real, imag);
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
+    }
+
+    /**
+     * Test of sub method, of class KomplexeZahl.
+     */
+    @Test
+    public void testSub_KomplexeZahl()
+    {
+        System.out.println("sub");
+        KomplexeZahl c = new KomplexeZahl(5, 5);
+        KomplexeZahl instance = new KomplexeZahl(20, 10);
+        KomplexeZahl expResult = new KomplexeZahl(15, 5);
+        KomplexeZahl result = instance.sub(c);
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
+    }
+
+    /**
+     * Test of sub method, of class KomplexeZahl.
+     */
+    @Test
+    public void testSub_double_double()
+    {
+        System.out.println("sub");
+        double real = 20.0;
+        double imag = 5.0;
+        KomplexeZahl instance = new KomplexeZahl(30, 15);
+        KomplexeZahl expResult = new KomplexeZahl(10, 10);
+        KomplexeZahl result = instance.sub(real, imag);
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
+    }
+
+    /**
+     * Test of multi method, of class KomplexeZahl.
+     */
+    @Test
+    public void testMulti_KomplexeZahl()
+    {
+        System.out.println("multi");
+        KomplexeZahl a = new KomplexeZahl(1, 1);
+        KomplexeZahl instance = new KomplexeZahl(1, 1);
+        KomplexeZahl expResult = new KomplexeZahl(0, 2);
+        KomplexeZahl result = instance.multi(a);
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
+    }
+
+    /**
+     * Test of multi method, of class KomplexeZahl.
+     */
+    @Test
+    public void testMulti_double_double()
+    {
+        System.out.println("multi");
+        double re = 1.0;
+        double im = 1.0;
+        KomplexeZahl instance = new KomplexeZahl(1, 1);
+        KomplexeZahl expResult = new KomplexeZahl(0, 2);
+        KomplexeZahl result = instance.multi(re, im);
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
+    }
+
+    /**
+     * Test of div method, of class KomplexeZahl.
+     */
+    @Test
+    public void testDiv_KomplexeZahl()
+    {
+        System.out.println("div");
+        KomplexeZahl a = new KomplexeZahl(1, 1);
+        KomplexeZahl instance = new KomplexeZahl(1, 1);
+        KomplexeZahl expResult = new KomplexeZahl(1, 0);
+        KomplexeZahl result = instance.div(a);
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
+    }
+
+    /**
+     * Test of div method, of class KomplexeZahl.
+     */
+    @Test
+    public void testDiv_double_double()
+    {
+        System.out.println("div");
+        double re = 1.0;
+        double im = 1.0;
+        KomplexeZahl instance = new KomplexeZahl(1, 1);
+        KomplexeZahl expResult = new KomplexeZahl(1, 0);
+        KomplexeZahl result = instance.div(re, im);
+        assertEquals(expResult.getReal(), result.getReal(), 0.0);
+        assertEquals(expResult.getImag(), result.getImag(), 0.0);
+    }
+    
 }
